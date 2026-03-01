@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio React & Next.js
 
-## Getting Started
+Bienvenue sur le projet Portfolio !
+Ce projet est réalisé avec **Next.js**, **React**, et une base de données **SQLite**.
 
-First, run the development server:
+## Prérequis pour faire tourner le projet
+
+1. **Node.js** (v18+ recommandé)
+2. **NPM** ou **Yarn**
+
+## Installation
+
+1. Cloner ce dépôt (`git clone ...`)
+2. Installer les dépendances :
+   ```bash
+   npm install
+   ```
+
+## Configuration (Important pour la correction)
+
+Ce projet utilise des variables d'environnement (notamment pour l'envoi des formulaires de contact via l'API Resend).
+Le fichier `.env.local` est ignoré par Git pour des raisons de sécurité.
+
+Pour que le projet fonctionne parfaitement chez vous :
+
+1. Prenez le fichier `.env.example` présent à la racine.
+2. Copiez/Renommez ce fichier en **`.env.local`**.
+3. (Optionnel) Si vous souhaitez tester l'envoi d'e-mail avec Resend, insérez votre propre clé API dans ce fichier `RESEND_API_KEY=...` (Sinon, tout le reste du site fonctionnera normalement).
+
+## Initialisation de la base de données
+
+Les données ("Compétences" et "Projets") ne sont pas écrites en dur, mais sont extraites dynamiquement d'une base SQLite.
+Avant de lancer le projet, **vous devez initialiser la base de données** à l'aide de cette commande :
+
+```bash
+node scripts/init-db.js
+```
+
+_Cela va créer/écraser le fichier `database.sqlite` et insérer les entrées par défaut._
+
+## Lancer l'environnement de développement
+
+Une fois les dépendances installées et la DB générée :
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+_Ce projet est une démonstration technique._

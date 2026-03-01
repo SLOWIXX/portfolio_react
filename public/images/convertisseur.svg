@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0b0b0c"/>
+      <stop offset="100%" style="stop-color:#101114"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.10)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.04)"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="600" fill="url(#bg)"/>
+  
+  <!-- Header avec titre et dark mode -->
+  <text x="50" y="50" font-family="Poppins, sans-serif" font-size="26" font-weight="600" fill="#ffffff">Convertisseur de devises</text>
+  <circle cx="930" cy="40" r="26" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="930" y="49" font-size="24" text-anchor="middle" fill="#ffffff">🌙</text>
+  
+  <!-- Panel principal -->
+  <rect x="50" y="100" width="900" height="440" rx="20" fill="url(#glass)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  
+  <!-- Champ Montant -->
+  <text x="85" y="150" font-family="Poppins, sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.7)">Montant</text>
+  <rect x="85" y="160" width="830" height="54" rx="12" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+  <text x="105" y="194" font-family="Poppins, sans-serif" font-size="17" fill="rgba(255,255,255,0.5)">0.00</text>
+  
+  <!-- Ligne De / À avec bouton swap -->
+  <g id="currency-row">
+    <!-- De -->
+    <text x="85" y="260" font-family="Poppins, sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.7)">De</text>
+    <rect x="85" y="270" width="365" height="54" rx="12" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+    <text x="105" y="304" font-family="Poppins, sans-serif" font-size="17" fill="#ffffff">USD</text>
+    <path d="M 433 297 L 438 302 L 433 307" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    
+    <!-- Bouton swap -->
+    <rect x="475" y="280" width="60" height="44" rx="12" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <text x="505" y="308" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">↔</text>
+    
+    <!-- À -->
+    <text x="560" y="260" font-family="Poppins, sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.7)">À</text>
+    <rect x="560" y="270" width="355" height="54" rx="12" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+    <text x="580" y="304" font-family="Poppins, sans-serif" font-size="17" fill="#ffffff">AUD</text>
+    <path d="M 898 297 L 903 302 L 898 307" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Section Résultat et boutons -->
+  <g id="result-section">
+    <text x="85" y="380" font-family="Poppins, sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.7)">Resultat :</text>
+    
+    <!-- Bouton résultat -->
+    <rect x="85" y="390" width="530" height="64" rx="12" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.24)" stroke-width="1"/>
+    <text x="110" y="429" font-family="Poppins, sans-serif" font-size="22" font-weight="600" fill="#ffffff">0.00</text>
+    
+    <!-- Bouton Supprimer l'historique -->
+    <rect x="640" y="400" width="275" height="44" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    
+    <!-- Icône poubelle corrigée -->
+    <g transform="translate(670, 422)">
+      <line x1="0" y1="-8" x2="0" y2="4" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="6" y1="-8" x2="6" y2="4" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-2" y1="-10" x2="8" y2="-10" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M -1 -10 L 0 5 L 6 5 L 7 -10" stroke="#ff6b6b" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="2" y1="-12" x2="4" y2="-12" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    
+    <text x="705" y="428" font-family="Poppins, sans-serif" font-size="14" fill="rgba(255,255,255,0.8)">Supprime l'historique</text>
+  </g>
+  
+  <!-- Section Historique -->
+  <text x="85" y="500" font-family="Poppins, sans-serif" font-size="15" font-weight="500" fill="rgba(255,255,255,0.85)">Historique</text>
+</svg>

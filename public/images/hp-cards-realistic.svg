@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bgDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c2f33"/>
+      <stop offset="100%" style="stop-color:#23272a"/>
+    </linearGradient>
+    <linearGradient id="containerBg">
+      <stop offset="0%" style="stop-color:#1f2125"/>
+      <stop offset="100%" style="stop-color:#1a1d20"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bgDark)"/>
+  
+  <!-- Header bar -->
+  <rect x="0" y="0" width="1200" height="90" fill="#23272a" opacity="0.95"/>
+  
+  <!-- Hamburger menu -->
+  <g id="hamburger">
+    <rect x="35" y="32" width="40" height="6" rx="3" fill="#e4e6eb"/>
+    <rect x="35" y="44" width="40" height="6" rx="3" fill="#e4e6eb"/>
+    <rect x="35" y="56" width="40" height="6" rx="3" fill="#e4e6eb"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="600" y="60" font-family="Poppins, Arial, sans-serif" font-size="32" font-weight="700" fill="#e4e6eb" text-anchor="middle" letter-spacing="2">CARTES DISPONIBLES</text>
+  
+  <!-- Search bar -->
+  <rect x="400" y="110" width="400" height="48" rx="24" fill="#1f2125" stroke="#3a3d42" stroke-width="2"/>
+  <text x="425" y="140" font-family="Arial, sans-serif" font-size="14" fill="#777">Rechercher une carte par nom ou acteur !</text>
+  
+  <!-- Main house container -->
+  <rect x="120" y="200" width="960" height="460" rx="15" fill="url(#containerBg)" stroke="#3a3d42" stroke-width="2" filter="url(#cardShadow)"/>
+  
+  <!-- House Title - GRYFFONDOR in huge text -->
+  <text x="600" y="300" font-family="Poppins, Arial, sans-serif" font-size="80" font-weight="700" fill="#e4e6eb" text-anchor="middle" letter-spacing="4">GRYFFONDOR</text>
+  
+  <!-- Cards row -->
+  <g id="cards-grid">
+    <!-- Card 1 -->
+    <g transform="translate(180, 350)">
+      <rect width="180" height="270" rx="12" fill="#25282c" stroke="#3a3d42" stroke-width="2" filter="url(#cardShadow)"/>
+      <rect x="10" y="10" width="160" height="220" rx="8" fill="#1a1d20"/>
+      <!-- Placeholder for image -->
+      <circle cx="90" cy="120" r="40" fill="#3a3d42"/>
+      <text x="90" y="252" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#e4e6eb" text-anchor="middle">Harry Potter</text>
+    </g>
+    
+    <!-- Card 2 -->
+    <g transform="translate(390, 350)">
+      <rect width="180" height="270" rx="12" fill="#25282c" stroke="#3a3d42" stroke-width="2" filter="url(#cardShadow)"/>
+      <rect x="10" y="10" width="160" height="220" rx="8" fill="#1a1d20"/>
+      <circle cx="90" cy="120" r="40" fill="#3a3d42"/>
+      <text x="90" y="252" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#e4e6eb" text-anchor="middle">Hermione G.</text>
+    </g>
+    
+    <!-- Card 3 -->
+    <g transform="translate(600, 350)">
+      <rect width="180" height="270" rx="12" fill="#25282c" stroke="#3a3d42" stroke-width="2" filter="url(#cardShadow)"/>
+      <rect x="10" y="10" width="160" height="220" rx="8" fill="#1a1d20"/>
+      <circle cx="90" cy="120" r="40" fill="#3a3d42"/>
+      <text x="90" y="252" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#e4e6eb" text-anchor="middle">Ron Weasley</text>
+    </g>
+    
+    <!-- Card 4 -->
+    <g transform="translate(810, 350)">
+      <rect width="180" height="270" rx="12" fill="#25282c" stroke="#3a3d42" stroke-width="2" filter="url(#cardShadow)"/>
+      <rect x="10" y="10" width="160" height="220" rx="8" fill="#1a1d20"/>
+      <circle cx="90" cy="120" r="40" fill="#3a3d42"/>
+      <text x="90" y="252" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#e4e6eb" text-anchor="middle">Dumbledore</text>
+    </g>
+  </g>
+</svg>
