@@ -1,0 +1,202 @@
+/* Modal de retour au portfolio */
+.portfolio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.portfolio-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.portfolio-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+}
+
+.portfolio-modal-content {
+    position: fixed;
+    top: 50%;
+    right: 80px;
+    transform: translateY(-50%) translateX(20px);
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 380px;
+    width: auto;
+    border: 2px solid rgba(0, 200, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.portfolio-modal.active .portfolio-modal-content {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+}
+
+.portfolio-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.portfolio-modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #00c8ff;
+    transform: rotate(90deg);
+}
+
+.portfolio-modal-body {
+    text-align: center;
+    color: #fff;
+}
+
+.portfolio-modal-icon {
+    font-size: 48px;
+    color: #00c8ff;
+    margin-bottom: 20px;
+    animation: slideRight 1s ease infinite;
+}
+
+@keyframes slideRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-10px); }
+}
+
+.portfolio-modal-body h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #00c8ff;
+}
+
+.portfolio-modal-body p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.portfolio-modal-custom-message {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.portfolio-modal-custom-message i {
+    color: #ffc107;
+    margin-right: 10px;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.portfolio-modal-custom-message p {
+    display: inline;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f0f0f0;
+    margin: 0;
+}
+
+.portfolio-modal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(145deg, #00c8ff, #0088cc);
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 200, 255, 0.3);
+}
+
+.portfolio-modal-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 200, 255, 0.5);
+}
+
+.portfolio-floating-btn {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 60px;
+    border-radius: 10px 0 0 10px;
+    background: linear-gradient(145deg, #00c8ff, #0088cc);
+    border: none;
+    color: #000;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: -3px 0 15px rgba(0, 200, 255, 0.4);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    animation: pulse 2s ease infinite;
+}
+
+.portfolio-floating-btn:hover {
+    width: 60px;
+    box-shadow: -5px 0 25px rgba(0, 200, 255, 0.6);
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 5px 20px rgba(0, 200, 255, 0.4); }
+    50% { box-shadow: 0 5px 30px rgba(0, 200, 255, 0.7); }
+}
+
+@media (max-width: 768px) {
+    .portfolio-modal-content {
+        padding: 25px 15px;
+        max-width: calc(100vw - 80px);
+        right: 60px;
+    }
+    
+    .portfolio-modal-body h3 {
+        font-size: 22px;
+    }
+    
+    .portfolio-modal-body p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .portfolio-floating-btn {
+        width: 45px;
+        height: 55px;
+        font-size: 20px;
+    }
+    
+    .portfolio-floating-btn:hover {
+        width: 50px;
+    }
+}

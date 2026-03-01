@@ -80,7 +80,7 @@ db.serialize(() => {
       tags: ["PHP", "Symfony", "Twig"],
       previewStatus: 3, // Active
       githubStatus: 2,  // Code Public
-      previewUrl: "https://todo-list.quentin-deglas.fr/",
+      previewUrl: "/projets/To_do_list/preview.html",
       githubUrl: "https://github.com/SLOWIXX/todo-list",
       isPrincipal: 0,
     },
@@ -102,7 +102,7 @@ db.serialize(() => {
       tags: ["HTML", "CSS", "JavaScript"],
       previewStatus: 3, // Active
       githubStatus: 2,  // Code Public
-      previewUrl: "https://eurokeennes.quentin-deglas.fr/",
+      previewUrl: "/projets/site-eurok/index.html",
       githubUrl: "https://github.com/SLOWIXX/Eurokeennes-MDS",
       isPrincipal: 0,
     },
@@ -111,9 +111,8 @@ db.serialize(() => {
       description: "Plateforme de réservation en ligne pour activités et événements avec gestion de planning et paiement intégré. Actuellement en cours !",
       image: "/images/reservations.svg",
       tags: ["PHP", "MySQL", "JavaScript"],
-      previewStatus: 1, // En cours
+      previewStatus: 2, // Disable
       githubStatus: 1,  // Code Privé
-      previewUrl: "",
       githubUrl: "",
       isPrincipal: 0,
     }

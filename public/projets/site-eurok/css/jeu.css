@@ -1,0 +1,73 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/futura/Futura-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Futura';
+    src: url('../fonts/futura/Futura-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Futura';
+    src: url('../fonts/futura/Futura-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #25343b;
+}
+
+
+iframe {
+  flex: 1 1 auto;
+  width: 100vw;
+  height: 100vh;
+  min-height: 0;
+  min-width: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  background: #F4F4F9;
+  display: block;
+  z-index: 1;
+  margin-top: -2rem;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #F7C100;
+  font-family: "Futura",  sans-serif;
+
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

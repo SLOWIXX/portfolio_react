@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/futura/Futura-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/futura/Futura-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/futura/Futura-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Futura", sans-serif;
+  background-color: #25343b;
+  color: #dcdcd2;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+.texte-pitch,
+.video-pitch,
+.intentions-flex,
+.intentions-flex .texte-pitch,
+.intentions-flex img {
+  font-family: "Futura", sans-serif !important;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: bold;
+  color: #F7C100;
+  margin-top: 2.5rem;
+  letter-spacing: 1px;
+}
+
+h2 {
+  margin-top: 3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #F7C100;
+  text-align: center;
+  font-family: "Futura", sans-serif;
+}
+
+.texte-pitch {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #dcdcd2;
+  background: #2f3e46;
+  border-left: 6px solid #F7C100;
+  border-radius: 0 18px 18px 0;
+  margin: 2rem auto 2.5rem auto;
+  padding: 1.5rem 2rem 1.5rem 1.5rem;
+  max-width: 800px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+.video-pitch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem 0 3rem 0;
+}
+
+.video-pitch iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 40vw;
+  max-height: 400px;
+  min-height: 220px;
+  border: none;
+  border-radius: 18px;
+  background: #1f2f38;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.intentions-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    gap: 3.5rem;
+  max-width: 1200px;     
+  margin: 2.5rem auto 2.5rem auto;
+}
+
+.intentions-flex img {
+  max-width: 370px;
+  width: 100%;
+  aspect-ratio: 1 / 1;     
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  object-fit: cover;
+  background: #2f3e46;
+}
+
+.intentions-flex .texte-pitch {
+  margin: 0;
+  max-width: 750px;
+  flex: 1;
+  min-width: 320px;
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+
+@media (max-width: 1200px) {
+  .intentions-flex {
+    max-width: 98vw;
+    gap: 2rem;
+  }
+  .intentions-flex img {
+    max-width: 270px;
+  }
+  .intentions-flex .texte-pitch {
+    max-width: 95vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .intentions-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+    max-width: 98vw;
+  }
+  .intentions-flex img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .intentions-flex .texte-pitch {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+  .texte-pitch {
+    font-size: 1rem;
+    padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+    border-radius: 0 10px 10px 0;
+  }
+  .video-pitch iframe {
+    height: 38vw;
+    min-height: 120px;
+    max-height: 180px;
+  }
+}
