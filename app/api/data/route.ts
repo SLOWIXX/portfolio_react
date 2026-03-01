@@ -26,6 +26,8 @@ export async function GET() {
       tags: JSON.parse(p.tags),
       previewStatus: p.previewStatus as 1 | 2 | 3,
       githubStatus: p.githubStatus as 1 | 2 | 3,
+      previewUrl: p.previewUrl,
+      githubUrl: p.githubUrl,
       isPrincipal: Boolean(p.isPrincipal)
     }));
 

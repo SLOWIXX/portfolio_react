@@ -7,7 +7,6 @@ const db = new sqlite3.Database(dbPath);
 console.log("Initialisation de la base de données...");
 
 db.serialize(() => {
-  // CREATE TABLE FOR SKILLS
   db.run(`
     CREATE TABLE IF NOT EXISTS skills (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -17,29 +16,9 @@ db.serialize(() => {
     )
   `);
 
-  /*
-   * =========================================================================
-   * POUR RAJOUTER UN PROJET PLUS TARD, VOICI LA COMMANDE SQL :
-   * =========================================================================
-   * 
-   * INSERT INTO projects (title, description, image, tags, previewStatus, githubStatus, isPrincipal) 
-   * VALUES (
-   *   'Nom de ton nouveau projet', 
-   *   'Description géniale de ton projet...', 
-   *   'https://url-de-ton-image.com/image.jpg', 
-   *   '["Tag1", "Tag2"]', 
-   *   1, 
-   *   2, 
-   *   0
-   * );
-   * 
-   * Note : 
-   * - Les tags doivent être stockés sous forme de tableau JSON texte : '["Vue JS", "Node JS"]'
-   * - isPrincipal : 1 c'est vrai, 0 c'est faux
-   * =========================================================================
-   */
+  db.run(`DROP TABLE IF EXISTS projects`);
   db.run(`
-    CREATE TABLE IF NOT EXISTS projects (
+    CREATE TABLE projects (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       title TEXT NOT NULL,
       description TEXT,
@@ -47,15 +26,15 @@ db.serialize(() => {
       tags TEXT,
       previewStatus INTEGER,
       githubStatus INTEGER,
+      previewUrl TEXT,
+      githubUrl TEXT,
       isPrincipal INTEGER DEFAULT 0
     )
   `);
 
-  // Clear existing data to avoid duplicates when re-running
   db.run(`DELETE FROM skills`);
   db.run(`DELETE FROM projects`);
 
-  // --- Insertion des Skills ---
   const stmtSkills = db.prepare("INSERT INTO skills (title, count, skills_list) VALUES (?, ?, ?)");
   const allSkills = [
     { title: "Languages", count: 7, skills: ["HTML", "CSS", "JavaScript", "TypeScript", "PHP", "Python", "C++"] },
@@ -70,16 +49,17 @@ db.serialize(() => {
   }
   stmtSkills.finalize();
 
-  // --- Insertion des Projets ---
-  const stmtProjects = db.prepare("INSERT INTO projects (title, description, image, tags, previewStatus, githubStatus, isPrincipal) VALUES (?, ?, ?, ?, ?, ?, ?)");
+  const stmtProjects = db.prepare("INSERT INTO projects (title, description, image, tags, previewStatus, githubStatus, previewUrl, githubUrl, isPrincipal) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
   const projects = [
     {
       title: "Site de Streaming",
       description: "Plateforme de streaming permettant de regarder des films et séries en haute qualité, avec recommandations personnalisées.",
       image: "/images/film.png",
       tags: ["Vue JS", "Node JS", "PHP", "MySQL"],
-      previewStatus: 1,
-      githubStatus: 2,
+      previewStatus: 1, // En cours
+      githubStatus: 1,  // Code Privé
+      previewUrl: "",
+      githubUrl: "",
       isPrincipal: 0,
     },
     {
@@ -87,8 +67,10 @@ db.serialize(() => {
       description: "Plateforme interactive pour collectionner et échanger des cartes Harry Potter avec base de données complète et système de rareté.",
       image: "/images/hp-cards-realistic.svg",
       tags: ["PHP", "MySQL", "API REST", "JavaScript"],
-      previewStatus: 2,
-      githubStatus: 2,
+      previewStatus: 2, // Disable
+      githubStatus: 1,  // Code Privé
+      previewUrl: "",
+      githubUrl: "",
       isPrincipal: 0,
     },
     {
@@ -96,8 +78,10 @@ db.serialize(() => {
       description: "Application web pour gérer des tâches quotidiennes avec interface intuitive et fonctionnalités de rappel. Premiers pas avec Symfony",
       image: "/images/todolist-realistic.svg",
       tags: ["PHP", "Symfony", "Twig"],
-      previewStatus: 3,
-      githubStatus: 2,
+      previewStatus: 3, // Active
+      githubStatus: 2,  // Code Public
+      previewUrl: "https://todo-list.quentin-deglas.fr/",
+      githubUrl: "https://github.com/SLOWIXX/todo-list",
       isPrincipal: 0,
     },
     {
@@ -105,8 +89,10 @@ db.serialize(() => {
       description: "Bot Discord spécialisé pour renseigner les joueurs sur un jeu vidéo avec 55 commandes personnalisées. Utilisé quotidiennement par une moyenne de 60 personnes.",
       image: "/images/discord-simple.svg",
       tags: ["Node.js", "Discord.js", "JavaScript"],
-      previewStatus: 2,
-      githubStatus: 2,
+      previewStatus: 2, // Disable
+      githubStatus: 1,  // Code Privé
+      previewUrl: "",
+      githubUrl: "",
       isPrincipal: 1,
     },
     {
@@ -114,8 +100,10 @@ db.serialize(() => {
       description: "Site web responsive pour le festival des Eurokéennes avec programmation interactive, mini-jeu intégré et fil d'actualités. Interface moderne et immersive pour découvrir l'événement.",
       image: "/images/eurok-site.png",
       tags: ["HTML", "CSS", "JavaScript"],
-      previewStatus: 3,
-      githubStatus: 2,
+      previewStatus: 3, // Active
+      githubStatus: 2,  // Code Public
+      previewUrl: "https://eurokeennes.quentin-deglas.fr/",
+      githubUrl: "https://github.com/SLOWIXX/Eurokeennes-MDS",
       isPrincipal: 0,
     },
     {
@@ -123,14 +111,16 @@ db.serialize(() => {
       description: "Plateforme de réservation en ligne pour activités et événements avec gestion de planning et paiement intégré. Actuellement en cours !",
       image: "/images/reservations.svg",
       tags: ["PHP", "MySQL", "JavaScript"],
-      previewStatus: 2,
-      githubStatus: 2,
+      previewStatus: 1, // En cours
+      githubStatus: 1,  // Code Privé
+      previewUrl: "",
+      githubUrl: "",
       isPrincipal: 0,
     }
   ];
 
   for (const proj of projects) {
-    stmtProjects.run(proj.title, proj.description, proj.image, JSON.stringify(proj.tags), proj.previewStatus, proj.githubStatus, proj.isPrincipal);
+    stmtProjects.run(proj.title, proj.description, proj.image, JSON.stringify(proj.tags), proj.previewStatus, proj.githubStatus, proj.previewUrl, proj.githubUrl, proj.isPrincipal);
   }
   stmtProjects.finalize();
 
