@@ -76,7 +76,7 @@ db.serialize(() => {
     {
       title: "Site de Streaming",
       description: "Plateforme de streaming permettant de regarder des films et séries en haute qualité, avec recommandations personnalisées.",
-      image: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=600",
+      image: "/images/film.png",
       tags: ["Vue JS", "Node JS", "PHP", "MySQL"],
       previewStatus: 1,
       githubStatus: 2,
@@ -85,7 +85,7 @@ db.serialize(() => {
     {
       title: "Site de collection de cartes",
       description: "Plateforme interactive pour collectionner et échanger des cartes Harry Potter avec base de données complète et système de rareté.",
-      image: "https://images.unsplash.com/photo-1544365558-35aa4afcf11f?q=80&w=600",
+      image: "/images/hp-cards-realistic.svg",
       tags: ["PHP", "MySQL", "API REST", "JavaScript"],
       previewStatus: 2,
       githubStatus: 2,
@@ -94,7 +94,7 @@ db.serialize(() => {
     {
       title: "To-Do List app",
       description: "Application web pour gérer des tâches quotidiennes avec interface intuitive et fonctionnalités de rappel. Premiers pas avec Symfony",
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=600",
+      image: "/images/todolist-realistic.svg",
       tags: ["PHP", "Symfony", "Twig"],
       previewStatus: 3,
       githubStatus: 2,
@@ -103,7 +103,7 @@ db.serialize(() => {
     {
       title: "Bot Discord d'aide",
       description: "Bot Discord spécialisé pour renseigner les joueurs sur un jeu vidéo avec 55 commandes personnalisées. Utilisé quotidiennement par une moyenne de 60 personnes.",
-      image: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=600",
+      image: "/images/discord-simple.svg",
       tags: ["Node.js", "Discord.js", "JavaScript"],
       previewStatus: 2,
       githubStatus: 2,
@@ -112,7 +112,7 @@ db.serialize(() => {
     {
       title: "Site Festival Eurokéennes",
       description: "Site web responsive pour le festival des Eurokéennes avec programmation interactive, mini-jeu intégré et fil d'actualités. Interface moderne et immersive pour découvrir l'événement.",
-      image: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=600",
+      image: "/images/eurok-site.png",
       tags: ["HTML", "CSS", "JavaScript"],
       previewStatus: 3,
       githubStatus: 2,
@@ -121,7 +121,7 @@ db.serialize(() => {
     {
       title: "Système de Réservations d'Activités",
       description: "Plateforme de réservation en ligne pour activités et événements avec gestion de planning et paiement intégré. Actuellement en cours !",
-      image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=600",
+      image: "/images/reservations.svg",
       tags: ["PHP", "MySQL", "JavaScript"],
       previewStatus: 2,
       githubStatus: 2,
